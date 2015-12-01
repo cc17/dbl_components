@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Examples</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+
+<body>
+    <pre>
+    var d = dialog({
+        title: '欢迎',
+        content: '欢迎使用 artDialog 对话框组件！'
+    });
+    d.show();
+  </pre>
+  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" id="demo1">
+    Launch demo modal
+  </button>
+
+
+  <pre>
+    var d = dialog({
+        title: 'message',
+        content: '<input autofocus />'
+    });
+    d.showModal();
+  </pre>
+  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" id="demo2">
+    Launch demo2 modal
+  </button>
+
+
+    <div class="modal fade" tabindex="-1" id="Model-tpl">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    <p>One fine body&hellip;</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" id="close-btn">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+    <script src="http://g.alicdn.com/aliyun/new-aliyun-www/0.0.1/vendor/jquery/jquery-1.9.0.js"></script>
+    <script data-debug src="/__build/common.js"></script>
+    <script data-debug src="/__build/demo.js"></script>
+</body>
+
+</html>
