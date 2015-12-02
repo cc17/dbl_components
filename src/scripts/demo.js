@@ -19,4 +19,5 @@ $('.slider-demo').each(function(index,item){
 
 
 var jPages = require('./components/pagination');
+console.log($('#pagination-demo').html());
 eval($('#pagination-demo').html());

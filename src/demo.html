@@ -193,13 +193,11 @@
               <!--自己需要写这一段-->
             </div>
             <div class="as-example">
-              <pre id="pagination-demo">
+              <pre>
                 slider($('.default-slider'),{
                   autoplay: true
                 });
               </pre>
-              <!-- 装载翻页的容器 -->
-              <div class="holder"></div>
             </div>
         </div>
         <!-- 翻页 -->
@@ -211,7 +209,7 @@
             <h3>翻页</h3>
             <div class="as-example">
               <pre id="pagination-demo">
-                new jPages('div.holder',{
+                new jPages('#pagination-holder',{
                   perPage: 5,
                   currentPage:4,
                   totalPage:200,
@@ -221,7 +219,7 @@
                 });
               </pre>
               <!-- 装载翻页的容器 -->
-              <div class="holder"></div>
+              <div class="holder" id="pagination-holder"></div>
             </div>
         </div>
       </div>
