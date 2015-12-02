@@ -1,7 +1,7 @@
 (function($) {
     require('./index.less');
 
-    $.Unslider = function(context, options) {
+    function Unslider(context, options) {
         var self = this;
 
         //  Create an Unslider reference we can use everywhere
@@ -122,7 +122,7 @@
             //  We want to keep this script as small as possible
             //  so we'll optimise some checks
             ['nav', 'arrows', 'keys', 'infinite'].forEach(function(module) {
-                self.options[module] && self['init' + $._ucfirst(module)]();
+                self.options[module] && self['init' + _ucfirst(module)]();
             });
 
             //  Add swipe support
@@ -371,10 +371,10 @@
             self.current = Math.min(Math.max(0, to), self.total - 1);
 
             if(self.options.nav) {
-                self.$nav.find('[data-slide="' + self.current + '"]')._toggleActive(self.options.activeClass);
+                _toggleActive(self.$nav.find('[data-slide="' + self.current + '"]'),self.options.activeClass);
             }
 
-            self.$slides.eq(self.current)._toggleActive(self.options.activeClass);
+            _toggleActive(self.$slides.eq(self.current),self.options.activeClass);
 
             return self;
         };
@@ -407,7 +407,7 @@
 
             //  Delegate the right method - everything's named consistently
             //  so we can assume it'll be called "animate" + 
-            var fn = 'animate' + $._ucfirst(self.options.animation);
+            var fn = 'animate' + _ucfirst(self.options.animation);
 
             //  Make sure it's a valid animation method, otherwise we'll get
             //  a load of bug reports that'll be really hard to report
@@ -551,7 +551,7 @@
                 };
             }
 
-            return $el._move(obj, speed || self.options.speed, self.options.easing, callback);
+            return $el.___move___(obj, speed || self.options.speed, self.options.easing, callback);
         };
 
         //  Allow daisy-chaining of methods
@@ -562,14 +562,14 @@
     //  They're both just helpful types of shorthand for
     //  anything that might take too long to write out or
     //  something that might be used more than once.
-    $.fn._toggleActive = function(className) {
-        return this.addClass(className).siblings().removeClass(className);
+    function _toggleActive(el,className) {
+        return el.addClass(className).siblings().removeClass(className);
     };
 
     //  The equivalent to PHP's ucfirst(). Take the first
     //  character of a string and make it uppercase.
     //  Simples.
-    $._ucfirst = function(str) {
+    function _ucfirst(str) {
         //  Take our variable, run a regex on the first letter
         return (str + '').toLowerCase().replace(/^./, function(match) {
             //  And uppercase it. Simples.
@@ -577,7 +577,7 @@
         });
     };
 
-    $.fn._move = function() {
+    $.fn.___move___ = function() {
         var type = 'animate';
 
         this.stop(true, true);
@@ -590,32 +590,6 @@
     };
 
     //  And set up our jQuery plugin
-    $.fn.unslider = function(opts) {
-        return this.each(function() {
-            var $this = $(this);
-
-            //  Allow usage of .unslider('function_name')
-            //  as well as using .data('unslider') to access the
-            //  main Unslider object
-            if(typeof opts === 'string' && $this.data('unslider')) {
-                opts = opts.split(':');
-
-                var fn = opts[0];
-                var call = $this.data('unslider')[fn];
-
-                //  Do we have arguments to pass to the string-function?
-                if(opts[1]) {
-                    var args = opts[1].split(',');
-                    return $.isFunction(call) && call.apply($this, args);
-                }
-
-                $.isFunction(call) && call();
-
-                return this;
-            }
-
-            return $this.data('unslider', new $.Unslider($this, opts));
-        });
-    };
+    module.exports = Unslider;
     
 })(window.jQuery);

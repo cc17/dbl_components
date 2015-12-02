@@ -1,4 +1,89 @@
 #demos pre {
-    color: rgba(255,255,255,.75);
-    line-height: 24px;
+  color: rgba(255, 255, 255, .75);
+  line-height: 24px;
+}
+
+.as-header.navbar {
+  .navbar-brand {
+    color: #fff;
+  }
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  margin-bottom: 0px;
+  border: none;
+  background: #1f8dd6;
+  .navbar-header {
+    width: 120px;
+  }
+  .navbar-nav {
+    li {
+      margin-right: 1px;
+      &.active a {
+        background: #2682c2;
+      }
+      a {
+        line-height: 20px;
+        position: relative;
+        display: block;
+        padding: 15px;
+        color: #fff;
+        &:hover{
+          background: #2682c2;
+        } 
+      }
+    }
+  }
+}
+
+.as-index-content {
+  padding-top: 50px;
+}
+.as-sidebar {
+  float: left;
+  width: 120px;
+  position: relative;
+  left: -10px;
+  padding-top:20px;
+  .nav{
+    li{
+      a{
+        padding-top:0;
+        padding-bottom:0;
+        margin:10px 0;
+      }
+      &.active{
+        a{
+          border-left: 2px solid #3090e4;
+          padding-left: 18px;
+        }
+      }
+      &:hover{
+        a{
+          border-left:1px solid #3090e4;
+          background:#fff;
+        }
+      }
+    }
+  }
+}
+
+.as-content-body {
+  padding: 0 0 50px 148px;
+
+
+  /**slider**/
+  .slider{
+    position: relative;
+    padding: 40px;
+    margin-bottom: 50px;
+    background: #fff;
+    color: #666;
+    text-align: center;
+    text-shadow: none;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0,0,0,.1);
+  }
+
 }

@@ -1,26 +1,22 @@
 
 require('../css/demo.less');
 
+/***dialog***/
 var dialog = require('./components/dialog');
-$('#demo1').click(function(){
-  var d = dialog({
-      title: '欢迎',
-      content: '欢迎使用 artDialog 对话框组件！'
+$('.dialog-show').each(function(index,item){
+  $(item).click(function(){
+    eval($(this).siblings('pre').html());
   });
-  d.show();
 });
-
-$('#demo2').click(function(){
-  var d = dialog({
-    title: 'message',
-    content: '<input autofocus />'
-  });
-  d.showModal();
-});
+/***dialog***/
 
 
 /*slider*/
 var slider = require('./components/slider');
-$('.fading-slider').unslider({
-  animation: 'fade', autoplay: true, arrows: false 
+$('.slider-demo').each(function(index,item){
+  eval($(item).siblings('pre').html());
 });
+
+
+var jPages = require('./components/pagination');
+eval($('#pagination-demo').html());
