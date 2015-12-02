@@ -1,6 +1,6 @@
 {
-  "name": "dbl_dialog",
-  "version": "0.0.4",
+  "name": "dbl-dialog",
+  "version": "0.0.7",
   "description": "",
   "main": "dialog.js",
   "scripts": {

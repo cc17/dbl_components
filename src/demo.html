@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 </head>
 
-<body>
+<body id="demo">
     <pre>
     var d = dialog({
         title: '欢迎',
@@ -35,26 +35,34 @@
   </button>
 
 
-    <div class="modal fade" tabindex="-1" id="Model-tpl">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title">Modal title</h4>
-                </div>
-                <div class="modal-body">
-                    <p>One fine body&hellip;</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" id="close-btn">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-            </div>
-            <!-- /.modal-content -->
-        </div>
-        <!-- /.modal-dialog -->
+  <!-- slider -->
+  <div class="demo">
+    <h2>Automatic fade animation</h2>
+
+    <div class="unslider" style="position:relative;">
+      <div class="fading-slider unslider-fade" style="overflow: hidden;height:350px;">
+      <ul class="unslider-wrap">
+        <li class="velocity-animating" style="opacity: 0;"><img src="http://unslider.com/img/cat1.jpg" alt="Cats!"></li>
+        <li class="velocity-animating" style="opacity: 0;"><img src="http://unslider.com/img/cat2.jpg" alt="Cats!"></li>
+        <li class="velocity-animating" style="opacity: 1;"><img src="http://unslider.com/img/cat3.jpg" alt="Cats!"></li>
+        <li class="unslider-active velocity-animating" style="opacity: 0;"><img src="http://unslider.com/img/cat5.jpg" alt="Cats!"></li>
+        <li class="velocity-animating" style="opacity: 0;"><img src="http://unslider.com/img/cat5.jpg" alt=">:)"></li>
+        <li class="velocity-animating" style="opacity: 0;"><img src="http://unslider.com/img/cat6.jpg" alt="Cats!"></li>
+      </ul>
     </div>
-    <!-- /.modal -->
+  </div>
+  <pre class="demo-usage">
+    $('.fading-slider').unslider({
+      <span class="hilite">
+      animation: 'fade',
+      autoplay: true,
+      arrows: false
+      </span>
+    });
+  </pre>
+
+
+
     <script src="http://g.alicdn.com/aliyun/new-aliyun-www/0.0.1/vendor/jquery/jquery-1.9.0.js"></script>
     <script data-debug src="/__build/common.js"></script>
     <script data-debug src="/__build/demo.js"></script>

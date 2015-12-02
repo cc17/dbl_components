@@ -64,6 +64,6 @@ module.exports = {
 
     // 模板（使用 table 解决 IE7 宽度自适应的 BUG）
     // js 使用 i="***" 属性识别结构，其余的均可自定义
-    innerHTML:require('./dialog.ejs')()
+    innerHTML:require('./index.ejs')()
     
 };

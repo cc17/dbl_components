@@ -1,7 +1,7 @@
-var dialog = require('./components/dialog/dialog');
 
+require('../css/demo.less');
 
-
+var dialog = require('./components/dialog');
 $('#demo1').click(function(){
   var d = dialog({
       title: '欢迎',
@@ -16,4 +16,11 @@ $('#demo2').click(function(){
     content: '<input autofocus />'
   });
   d.showModal();
+});
+
+
+/*slider*/
+var slider = require('./components/slider');
+$('.fading-slider').unslider({
+  animation: 'fade', autoplay: true, arrows: false 
 });
